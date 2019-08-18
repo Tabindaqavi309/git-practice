@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+  
+</head>
+<body>
+    Name : <input type="text" id="txtName" >
+    Age : <input type="text" id="txtAge" >
+    <input type="button" value="Save" onclick="saveInLocal()">
+   
+    <input type="button" value="Get Local Storage Values" onclick="getFromLocal()">
+    
+    <div id="showData">
+
+    </div>
+</body>
+<script>
+        function saveInLocal()
+        {
+       let userName = document.getElementById("txtName");
+       let userAge = document.getElementById("txtAge");
+       console.log(userName);
+       console.log(userAge);
+       localStorage.setItem("name", userName.value);
+       localStorage.setItem("age",userAge.value);
+       
+    }
+
+    function getFromLocal()
+    {
+        let myDiv = document.getElementById("showData");
+        let myName = localStorage.getItem("name");
+        let myAge = localStorage.getItem("age");
+
+        myDiv.innerText += myName;
+        myDiv.innerText += myAge;
+    }
+  </script>
+</html>
